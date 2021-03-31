@@ -42,7 +42,12 @@ the parent should be notified. If a parent dies all children should be killed.
 
 On idea is to have a central registry that handles spawning Actors and routing messages. 
 
+## Issues to solve
 
+* Delivery Guarantees ( At-most-once most likely )
+* Algorithm for spreading actors over nodes while maintaining spawn hierarchies
+* Discovery mechanism for nodes
+* Mechanism for keeping track of spawn hierarchies and bubbling notifications up the tree
 
 ## End Goal
 Framework should be able to distribute a task over several processes
@@ -51,9 +56,3 @@ Loosing one node/actor should not spin up a new one by the node supervisor or by
 
 ![alt text](Overview.png "Title")
 
-
-## Implementation
-
-### First step, spawn an actor
-
-I was inspired

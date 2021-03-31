@@ -2,15 +2,21 @@ package framework;
 
 import java.util.UUID;
 
-public interface Actor {
+public abstract class Actor {
+    private final UUID id = UUID.randomUUID();
 
-    default UUID spawnActor(String name) {
+    public UUID spawnActor(String name) {
         return ActorApp._getSuperVisor().spawnActor(name);
     }
 
-    default void sendMessage(UUID id, Message message) {
-        ActorApp._getSuperVisor().sendMessage(id, message);
+    public final boolean sendMessage(Message message, UUID receiver) {
+        return ActorApp._getSuperVisor().sendMessage(message, receiver, id);
     }
 
-    default void onMessage(Message message) {}
+    public void onMessage(Message message, UUID senderId) {
+    }
+
+    public UUID getId() {
+        return id;
+    }
 }

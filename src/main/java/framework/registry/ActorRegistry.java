@@ -10,9 +10,8 @@ public class ActorRegistry {
     private static final Map<UUID, Actor> map = new HashMap<>();
 
     public UUID registerActor(Actor actor) {
-        UUID uuid = UUID.randomUUID();
-        map.put(uuid, actor);
-        return uuid;
+        map.put(actor.getId(), actor);
+        return actor.getId();
     }
 
     public Actor getActor(UUID uuid) {

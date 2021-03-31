@@ -2,7 +2,7 @@ package framework.test_actors;
 
 import framework.Actor;
 
-public class ActorWithArgs implements Actor {
+public class ActorWithArgs extends Actor {
     String abc;
     int number;
 
