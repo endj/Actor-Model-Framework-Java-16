@@ -11,7 +11,6 @@ public final class DefaultSuperVisor extends SuperVisor {
     }
 
     public static SuperVisor actors(String actorPackage) {
-        ActorRegistry actorRegistry = new ActorRegistry();
-        return new DefaultSuperVisor(actorPackage, actorRegistry);
+        return new DefaultSuperVisor(actorPackage, new ActorRegistry());
     }
 }

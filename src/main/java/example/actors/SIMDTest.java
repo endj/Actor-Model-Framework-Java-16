@@ -18,7 +18,7 @@ public class SIMDTest extends Actor {
         if(message instanceof DotProduct dotProduct) {
 
             if(dotProduct.numberA().length != dotProduct.numbersB().length) {
-                sendMessage(new DotProductFailure("Wrong input"), senderId);
+                sendMessage(new DotProductFailure("Bad input"), senderId);
             } else {
                 long l = System.nanoTime();
                 long simdResult = simpdVersion(dotProduct.numberA(), dotProduct.numbersB());

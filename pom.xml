@@ -55,6 +55,8 @@
                         --enable-preview
                     </compilerArgs>
                     <compilerArgs>-Xlint:all</compilerArgs>
+                    <source>16</source>
+                    <target>16</target>
 
                 </configuration>
                 <version>3.8.1</version>

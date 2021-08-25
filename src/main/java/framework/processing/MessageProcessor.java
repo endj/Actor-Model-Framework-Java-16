@@ -1,6 +1,5 @@
 package framework.processing;
 
-import framework.Actor;
 import framework.channel.SendableMessage;
 import framework.registry.ActorRegistry;
 
@@ -21,7 +20,7 @@ public class MessageProcessor implements Runnable {
         while (!Thread.currentThread().isInterrupted()) {
             try {
                 SendableMessage message = channel.takeLast();
-                Actor actor = actorRegistry.getActor(message.receiver());
+                var actor = actorRegistry.getActor(message.receiver());
                 if (actor != null) {
                     actor.onMessage(message.message(), message.sender());
                 }

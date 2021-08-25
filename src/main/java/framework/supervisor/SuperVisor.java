@@ -22,7 +22,7 @@ public class SuperVisor extends Actor {
     }
 
     public UUID spawnActor(String actorName) {
-        Actor actor = actorFactory.loadActor(actorName);
+        var actor = actorFactory.loadActor(actorName);
         return actorRegistry.registerActor(actor);
     }
 

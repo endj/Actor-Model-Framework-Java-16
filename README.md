@@ -3,34 +3,34 @@
 Testing Java 16 features by implementing a framework Actor model framework somewhat inspired by Erlang.
 
 ## Java 16 Features tested
-* SIMD Instruction Vectorization
+* ~~SIMD Instruction Vectorization~~
 * Unix-Domain Socket Channels
-* Pattern Matching for instanceof
-* Records
+* ~~Pattern Matching for instanceof~~
+* ~~Records~~
 * Sealed Classes
 
-## framework.Actor Framework Features
+## framework.Actor Framework Goal Features
 
 ### Actors:
 
 Actors can:
-* Send messages to other actors given their id
-* Accept messages from other actors
-* Spawn other actors
+* ~~Send messages to other actors given their id~~
+* ~~Accept messages from other actors~~
+* ~~Spawn other actors~~
 * Supervise other actors
 
 Properties:
-* Decoupled from other actors
-* Queued message inbox
-* Asynchronous communication
-* Concurrent and non-blocking
+* ~~Decoupled from other actors~~
+* ~~Queued message inbox~~
+* ~~Asynchronous communication~~
+* ~~Concurrent and non-blocking~~
 
 ### Framework
 
 ## General Implementation Ideas And Requirements
 
 The program should be bootstrapped by spawning one or more Actors and sending them messages to drive the 
-program state forward. The Bootstrapping itself should be done by an actor, so it can restart failed child nodes.
+program state forward. The bootstrapping itself should be done by an actor, so it can restart failed child nodes.
 
 I need a mechanism to spawn a new Actor without coupling the Actors through code so no Class as parameter.
 I want to be able to spawn actors across networks/processes.
@@ -44,7 +44,7 @@ On idea is to have a central registry that handles spawning Actors and routing m
 
 ## Issues to solve
 
-* Delivery Guarantees ( At-most-once most likely )
+* Delivery Guarantees ( At-least-once most likely )
 * Algorithm for spreading actors over nodes while maintaining spawn hierarchies
 * Discovery mechanism for nodes
 * Mechanism for keeping track of spawn hierarchies and bubbling notifications up the tree

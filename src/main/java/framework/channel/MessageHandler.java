@@ -19,7 +19,7 @@ public class MessageHandler {
             .collect(Collectors.toList());
 
     public MessageHandler(ActorRegistry actorRegistry) {
-        ExecutorService executorService = Executors.newFixedThreadPool(SIZE);
+        var executorService = Executors.newFixedThreadPool(SIZE);
         IntStream.rangeClosed(0, SIZE)
                 .mapToObj(CHANNELS::get)
                 .forEach(channel -> executorService.execute(new MessageProcessor(channel, actorRegistry)));

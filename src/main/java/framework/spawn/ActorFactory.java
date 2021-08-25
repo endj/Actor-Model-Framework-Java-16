@@ -69,12 +69,12 @@ public class ActorFactory {
     }
 
     private Class<?>[] getArgumentTypes(Object... args) {
-        Class<?>[] argType = new Class[args.length];
+        var argTypes = new Class[args.length];
         for (int i = 0; i < args.length; i++) {
             Class<?> aClass = args[i].getClass();
-            argType[i] = BOXED_TYPE_CONVERTER.getOrDefault(aClass, aClass);
+            argTypes[i] = BOXED_TYPE_CONVERTER.getOrDefault(aClass, aClass);
         }
-        return argType;
+        return argTypes;
     }
 
 }

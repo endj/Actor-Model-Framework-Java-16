@@ -13,8 +13,7 @@ public abstract class Actor {
         return ActorApp._getSuperVisor().sendMessage(message, receiver, id);
     }
 
-    public void onMessage(Message message, UUID senderId) {
-    }
+    public abstract void onMessage(Message message, UUID senderId);
 
     public UUID getId() {
         return id;
