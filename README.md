@@ -1,6 +1,6 @@
-# testapp.Test Java 16 Features
+# Just testing some Java 16 Features
 
-Testing Java 16 features by implementing a framework Actor model framework somewhat inspired by Erlang.
+Testing Java 16 features by implementing a framework Actor model framework.
 
 ## Java 16 Features tested
 * ~~SIMD Instruction Vectorization~~
@@ -50,9 +50,8 @@ On idea is to have a central registry that handles spawning Actors and routing m
 * Mechanism for keeping track of spawn hierarchies and bubbling notifications up the tree
 
 ## End Goal
-Framework should be able to distribute a task over several processes
-or servers. Actors spawned in one node should be distributed across all nodes of the cluster.
-Loosing one node/actor should not spin up a new one by the node supervisor or by cluster supervisor quorum.
+Spawning an actor can be done from any node in the cluster and actors are spread evenly. If an actor dies, a supervisor on some
+node should be notified. Messages are automatically routed to the correct node and correct actor
 
 ![alt text](Overview.png "Title")
 
